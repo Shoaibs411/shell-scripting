@@ -15,7 +15,7 @@
 
 # printing the color 
 # echo -e "\e[COLORCODEm I am printing Red Color \e [0m"
-echo "\n"
+echo -e "\n"
 echo -e "\e[31m I am printing Red Color \e [0m"
 echo -e "\e[32m I am printing Red Color \e [0m"
 echo -e "\e[33m I am printing Red Color \e [0m"
