@@ -1,6 +1,7 @@
 #!/bin/bash
 USERID=$(id -u)
 COMPONENT=$1
+LOGFILE="&>> /tmp/${COMPONENT}.log"
 
 status(){
     if [ $1 -eq 0 ]; then
@@ -20,7 +21,7 @@ echo -e "\n\t ********** \e[35m \033[1m Configuring #COMPONENT \033[0m \e[0m ***
 
 echo -e -n "\nInstalling nginx :"
 
-yum install nginx -y    &>> /tmp/frontend.log
+yum install nginx -y    $LOGFILE
 status $?
 
 echo -e -n "Downloading the $COMPONENT :"
@@ -29,11 +30,11 @@ status $?
 
 echo -e -n "Clean-up of $COMPONENT :"
 cd /usr/share/nginx/html
-rm -rf *                        &>> /tmp/frontend.log
+rm -rf *                        $LOGFILE
 status $?
 
 echo -e -n "Extracting $COMPONENT :"
-unzip /tmp/frontend.zip         &>> /tmp/frontend.log
+unzip /tmp/frontend.zip         $LOGFILE
 status $?
 
 echo -e -n "Configuring $COMPONENT :"
@@ -44,9 +45,9 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 status $?
 
 echo -e -n "Restarting $COMPONENT :"
-systemctl enable nginx      &>> /tmp/frontend.log
-systemctl daemon reload     &>> /tmp/frontend.log
-systemctl start nginx       &>> /tmp/frontend.log
+systemctl enable nginx      $LOGFILE
+systemctl daemon reload     $LOGFILE
+systemctl start nginx       $LOGFILE
 status $?
 
 echo -e "\n\t ********** \e[35m \033[1m Frontend Configured Successsfully \033[0m \e[0m **********"
