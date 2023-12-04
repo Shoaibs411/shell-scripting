@@ -1,9 +1,14 @@
 #!/bin/bash
+UID=$(id -u)
 
+if [ $UID -ne 0 ]; then
+    echo -e "\n\e[31m \033[1m This script is expected to be executed with sudo or as a root user \033[0m \e[0m **********"
+    exit 1
+fi
 echo -e "\n|--------------------------------------------------------------------|"
 echo -e "\n\t ********** \e[35m \033[1m Configuring frontend \033[0m \e[0m **********"
 
-echo -e "\n\t \e[32m \033[1m Installing nginx \033[0m \e[0m "
+echo -e "\n \e[32m \033[1m Installing nginx : \033[0m \e[0m "
 
 yum install nginx -y
 # systemctl enable nginx
