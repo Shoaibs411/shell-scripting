@@ -3,9 +3,9 @@
 echo -e "\n \e[33m Exploring Special variables in Shell Scripting \e[0m"
 
 echo -e "\nPrinting the Script Name : \e[34m $0 \e[0m"
-echo -e "\nPrinting the $1 : \e[34m $1 \e[0m"
-echo -e "\nPrinting the '$2' : \e[34m $2 \e[0m"
-echo -e "\nPrinting the '$3' : \e[34m $3 \e[0m"
+echo -e "\nPrinting the 1st line Argument : \e[34m $1 \e[0m"
+echo -e "\nPrinting the 2nd line Argument : \e[34m $2 \e[0m"
+echo -e "\nPrinting the 3rd ;ine Argument : \e[34m $3 \e[0m"
 echo -e "\nPrinting the '$4' : \e[34m $4 \e[0m"
 echo -e "\nPrinting the '$5' : \e[34m $5 \e[0m"
 echo -e "\nPrinting the '$6' : \e[34m $6 \e[0m"
