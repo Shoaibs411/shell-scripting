@@ -19,7 +19,7 @@ echo -e "\n \e[35m \033[1m \t Exploring Loops in Shell Scripting \033[0m \e[0m"
 # echo Value is 50 
 
 for i in 10 20 30 40 50 ; do 
-echo -e "\n \e[32m \t Values from the loop are $i \e[0m"
+echo -e "\n \e[32m \t Values from the for loop are $i \e[0m"
 done 
 
 <<COMMENT
@@ -38,6 +38,6 @@ done
 
 num=1
 while [ "$num" -le 10 ]; do
-    echo -e "\n \e[32m \t Values from the loop are $num \e[0m"
+    echo -e "\n \e[32m \t Values from the while loop are $num \e[0m"
     ((num++))
 done
