@@ -1,7 +1,7 @@
 #!/bin/bash
 USERID=$(id -u)
 COMPONENT=$1
-LOGFILE="/tmp/${$COMPONENT}.log"
+LOGFILE="/tmp/${COMPONENT}.log"
 
 status(){
     if [ $1 -eq 0 ]; then
