@@ -35,3 +35,8 @@ echo -e "\n|--------------------------------------------------------------------
 for cmd_arg in $@ ; do
 echo -e "\n \e[34m \t Command line arguments are $cmd_arg \e[0m"
 done
+
+while [ "$num" -le 10 ]; do
+    echo -e "\n \e[32m \t Values from the loop are $num \e[0m"
+    ((num++))
+done
