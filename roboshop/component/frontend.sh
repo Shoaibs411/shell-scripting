@@ -10,7 +10,7 @@ fi
 echo -e "\n|--------------------------------------------------------------|"
 echo -e "\n\t ********** \e[35m \033[1m Configuring Frontend \033[0m \e[0m **********"
 
-echo -e -n "\n Installing nginx :"
+echo -e -n "\nInstalling nginx :"
 
 yum install nginx -y    &>> /tmp/frontend.log
 if [ $? -eq 0 ]; then
