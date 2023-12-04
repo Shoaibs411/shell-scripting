@@ -3,6 +3,7 @@ UID=$(id -u)
 
 if [ $UID -ne 0 ]; then
     echo -e "\n\e[31m \033[1m This script is expected to be executed with sudo or as a root user \033[0m \e[0m"
+    echo -e "\n\t\e[35m Example Usage : sudo bash scriptName componentName \e[0m"
     exit 1
 fi
 echo -e "\n|--------------------------------------------------------------------|"
