@@ -32,3 +32,4 @@ fi
         echo -e "\n \e[32m \033[1m \t Example usage :- 'bash scriptname.sh start' \033[0m \e[0m" 
 
         echo -e "\n|--------------------------------------------------------------------|"
+        exit 100
