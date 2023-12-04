@@ -7,7 +7,7 @@
 
 DATE=$(date +%F)
 no_of_sessions=$(who| wc -l)
-echo -e "\n \e[32m Good Morning, Today's date is $DATE \e[0m"
+echo -e "\n  Good Morning, Today's date is \e[32m $DATE \e[0m"
 
 
-echo -e "\n \e[33m number of active users in system are $no_of_sessions \e[0m"
+echo -e "\n  number of active users in system are \e[33m $no_of_sessions \e[0m"
