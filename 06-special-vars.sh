@@ -14,5 +14,5 @@ echo -e "\nPrinting the 8th line Argument' : \e[34m $8 \e[0m"
 echo -e "\nPrinting the 9th line Argument' : \e[34m $9 \e[0m"
 
 echo -e "\nPrinting Script Name : \e[34m $0 \e[0m"
-echo -e "\nPrinting all arguments used in script Name : \e[34m "$#" \e[0m"
+echo -e "\nPrinting all arguments used in script Name : \e[34m $# \e[0m"
 echo -e "\nPrinting exit code of the previous command : \e[34m "$?" \e[0m"
