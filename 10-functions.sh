@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Exploring Functions in Bash
-echo -e "\n \e[33m \033[1m \033[3m "${bold}" Exploring Funtions in Shell Scripting \033[0m \033[0m \e[0m "${normal}""
+echo -e "\n \e[35m \033[1m \033[3m "${bold}" Exploring Funtions in Shell Scripting \033[0m \033[0m \e[0m "${normal}""
 
 # There are 4 types of command available : 
 
