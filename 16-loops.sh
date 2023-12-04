@@ -23,11 +23,12 @@ echo -e "\n \e[32m \t Values from the loop are $i \e[0m"
 done 
 
 <<COMMENT
+
 for name in Jethalal Popatlal Sundarlal Manilal Mohanlal ; do
 echo -e "\n \e[33m \t Names from the loop are $name \e[0m"
 done
 
-<<COMMENT
+COMMENT
 
 echo -e "\n|--------------------------------------------------------------------|"
 
