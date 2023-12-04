@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Special Variables in Shell :- 
+
 bold=$(tput bold)
 normal=$(tput sgr0)
 
