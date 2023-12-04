@@ -18,6 +18,5 @@ b56() {
     echo -e "\n This a function b56"
 }
 
-echo -e "\n Called out the function b56" 
-
 b56
+echo -e "\n Called out the function b56" 
