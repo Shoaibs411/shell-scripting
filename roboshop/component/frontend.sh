@@ -66,4 +66,6 @@ else
     echo -e "\e[31m Failed \e[0m"
 fi
 
+echo -e "\n\t ********** \e[35m \033[1m Frontend Configuration completed Successsfully \033[0m \e[0m **********"
+
 echo -e "\n|--------------------------------------------------------------|"
