@@ -25,7 +25,7 @@ curl -s -o /etc/yum.repos.d/mongodb.repo $MONGO_REPO
 status $?
 
 echo -e -n "Installing the $COMPONENT :"
-um install -y mongodb-org    &>> ${LOGFILE}
+um install -y mongodb-org $MONGO_REPO   &>> ${LOGFILE}
 status $?
 
 
