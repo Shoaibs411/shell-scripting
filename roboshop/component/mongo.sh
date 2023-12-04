@@ -23,3 +23,10 @@ echo -e "\n\t ********** \e[35m \033[1m Configuring ${COMPONENT} \033[0m \e[0m *
 echo -e -n "Downloading the $COMPONENT repo :"
 curl -s -o /etc/yum.repos.d/mongodb.repo $MONGO_REPO
 status $?
+
+echo -e -n "Installing the $COMPONENT :"
+um install -y mongodb-org    &>> ${LOGFILE}
+status $?
+
+# systemctl enable mongod
+# systemctl start mongod
