@@ -14,11 +14,6 @@ echo -e "\n" '$?' "prints the exit code of the last command : \e[34m $? \e[0m"
 echo -e "\n" '$*' "Prints all the arguments used. : \e[34m $* \e[0m"
 echo -e "\n" '$@' "Prints all the arguments used. : \e[34m $@ \e[0m"
 
-echo $0   # Prints Script Name 
-echo $#   # Prints the overall arguments used in the script 
-echo $?   # This prints the exit code of the last command
-echo $*   # Prints all the arguments used.
-echo $@   # Prints all the arguments used.
 
 # echo "Variables Used In The Script $*"    # $* is going to print the used variables  
 # echo "Variabels used are $@"              # $@ is going to print the used variables  
