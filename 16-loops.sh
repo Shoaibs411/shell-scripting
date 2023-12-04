@@ -22,4 +22,8 @@ for i in 10 20 30 40 50 ; do
 echo -e "\n \e[32m \t Values from the loop are $i \e[0m"
 done 
 
+for name in Jethalal Popatlal Sundarlal Manilal Mohanlal ; do
+echo -e "\n \e[32m \t Values from the loop are $name \e[0m"
+done
+
 echo -e "\n|--------------------------------------------------------------------|"
