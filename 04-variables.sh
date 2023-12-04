@@ -8,3 +8,5 @@ b=abc
 
 echo -e "\nprinting the value of a = $a"
 echo printing the value of a = {$a}
+
+echo printing the value of b = $b
