@@ -1,6 +1,6 @@
 #!/bin/bash
 USERID=$(id -u)
-COMPONENT=$1
+COMPONENT=frontend
 LOGFILE="/tmp/${COMPONENT}.log"
 
 status(){
