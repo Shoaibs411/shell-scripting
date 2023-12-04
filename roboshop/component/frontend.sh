@@ -17,7 +17,7 @@ if [ $UID -ne 0 ]; then
     exit 1
 fi
 echo -e "\n|--------------------------------------------------------------|"
-echo -e "\n\t ********** \e[35m \033[1m Configuring #COMPONENT \033[0m \e[0m **********"
+echo -e "\n\t ********** \e[35m \033[1m Configuring $COMPONENT \033[0m \e[0m **********"
 
 echo -e -n "\nInstalling nginx :"
 
@@ -25,7 +25,7 @@ yum install nginx -y    &>> $LOGFILE
 status $?
 
 echo -e -n "Downloading the $COMPONENT :"
-curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
 status $?
 
 echo -e -n "Clean-up of $COMPONENT :"
@@ -34,7 +34,7 @@ rm -rf *                        &>> $LOGFILE
 status $?
 
 echo -e -n "Extracting $COMPONENT :"
-unzip /tmp/frontend.zip        &>> $LOGFILE
+unzip -o /tmp/frontend.zip        &>> $LOGFILE
 status $?
 
 echo -e -n "Configuring $COMPONENT :"
