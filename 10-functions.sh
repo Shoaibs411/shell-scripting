@@ -9,3 +9,22 @@ echo -e "\n \e[35m \033[1m \033[3m "${bold}" Exploring Funtions in Shell Scripti
 # 2) Aliases                  ( Alises are shortcuts,  alias net="netstat -tulpn" )
 # 3) Shell Built-in Commands  
 # 4) Functions                # Functions are nothing but a set of command that can be written in a sequence and can be called n number of times as per your choice.
+
+# How to declare a function ?
+
+sample() {
+    echo calling a sample funtion to demonstarte
+}
+
+# How do you call a function 
+
+sample   # calling a function
+
+b56() {
+
+    echo -e "\n This a function b56"
+}
+
+echo -e "\n Calling the function b56" 
+
+b56
