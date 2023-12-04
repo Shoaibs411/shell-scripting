@@ -55,7 +55,7 @@ else
     echo -e "\e[31m Failed \e[0m"
 fi
 
-echo -e -n "Restarting "$COMPONENT" "
+echo -e -n "Restarting "$COMPONENT" :"
 systemctl enable nginx      &>> /tmp/frontend.log
 systemctl daemon reload     &>> /tmp/frontend.log
 systemctl start nginx       &>> /tmp/frontend.log
