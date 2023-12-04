@@ -26,3 +26,5 @@ if [ "$ACTION" == "restart" ] ; then
         echo -e "\n|--------------------------------------------------------------------|"
         exit 2
 fi
+
+        echo -e "\n \e[31m \033[1m \033[3m \t It has not met any conditions \033[0m \033[0m \e[0m"
