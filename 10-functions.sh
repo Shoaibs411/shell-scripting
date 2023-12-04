@@ -12,19 +12,12 @@ echo -e "\n \e[35m \033[1m \033[3m "${bold}" Exploring Funtions in Shell Scripti
 
 # How to declare a function ?
 
-sample() {
-    echo calling a sample funtion to demonstarte
-}
-
-# How do you call a function 
-
-sample   # calling a function
 
 b56() {
 
     echo -e "\n This a function b56"
 }
 
-echo -e "\n Calling the function b56" 
+echo -e "\n Called out the function b56" 
 
 b56
