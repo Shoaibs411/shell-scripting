@@ -5,4 +5,4 @@
 
 DATE=21/05/2023
 
-echo -e "\n \e[31m Good Morning, Today's date is $DATE \e[0m"
+echo -e "\n \e[32m Good Morning, Today's date is $DATE \e[0m"
