@@ -19,7 +19,7 @@ else
     echo -e "\e[31m Failed \e[0m"
 fi
 
-echo -e -n "\n Downloading the $COMPONENT :"
+echo -e -n "Downloading the $COMPONENT :"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 if [ $? -eq 0 ]; then
     echo -e "\e[32m Success \e[0m"
