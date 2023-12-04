@@ -25,7 +25,7 @@ fi
 
         echo -e "\n \e[31m \033[1m \t It has not met any conditions \033[0m \e[0m"
         echo -e "\n \e[31m \033[1m \t Valid options are as follows \033[0m \e[0m"
-        echo -e "\n\t 1.Start \n\t 2.stop \n\t 3.restart"
+        echo -e "\n\t 1.start \n\t 2.stop \n\t 3.restart"
         echo -e "\n \e[32m \033[1m \t Example usage :- 'bash scriptname.sh start' \033[0m \e[0m" 
 
         echo -e "\n|--------------------------------------------------------------------|"
