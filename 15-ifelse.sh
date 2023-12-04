@@ -26,3 +26,8 @@ if [ "$ACTION" == "restart" ] ; then
         exit 2
 fi
 
+if [ "$ACTION" == "NULL" ] ; then
+        echo -e "\n \e[32m \033[1m \033[3m \t Starting Shipping Services\033[0m \033[0m \e[0m"
+        echo -e "\n|--------------------------------------------------------------------|"
+        exit 3
+fi
