@@ -6,7 +6,7 @@ if [ $UID -ne 0 ]; then
     echo -e "\n\t\e[35m Example Usage : sudo bash scriptName componentName \e[0m"
     exit 1
 fi
-echo -e "\n|--------------------------------------------------------------------|"
+echo -e "\n|--------------------------------------------------------------|"
 echo -e "\n\t ********** \e[35m \033[1m Configuring frontend \033[0m \e[0m **********"
 
 echo -e -n "\n Installing nginx :"
@@ -33,4 +33,4 @@ fi
 # mv localhost.conf /etc/nginx/default.d/roboshop.conf
 
 
-echo -e "\n|--------------------------------------------------------------------|"
+echo -e "\n|--------------------------------------------------------------|"
