@@ -19,4 +19,7 @@ echo -e "\n \e[35m \033[1m \t Exploring Loops in Shell Scripting \033[0m \e[0m"
 # echo Value is 50 
 
 for i in 10 20 30 40 50 ; do 
-echo -e "\n \e[35m \033[1m \t Values from the loop are $i \033[0m \e[0m"done 
+echo -e "\n \e[35m \033[1m \t Values from the loop are $i \033[0m \e[0m"
+done 
+
+echo -e "\n|--------------------------------------------------------------------|"
