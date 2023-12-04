@@ -8,7 +8,7 @@ if [ $UID -ne 0 ]; then
     exit 1
 fi
 echo -e "\n|--------------------------------------------------------------|"
-echo -e "\n\t ********** \e[35m \033[1m Configuring Frontend \033[0m \e[0m **********"
+echo -e "\n\t ********** \e[35m \033[1m Configuring #COMPONENT \033[0m \e[0m **********"
 
 echo -e -n "\nInstalling nginx :"
 
@@ -27,7 +27,7 @@ else
     echo -e "\e[31m Failed \e[0m"
 fi
 
-echo -e -n "Clean-up of "$COMPONENT" :"
+echo -e -n "Clean-up of $COMPONENT :"
 cd /usr/share/nginx/html
 rm -rf *                        &>> /tmp/frontend.log
 if [ $? -eq 0 ]; then
@@ -36,7 +36,7 @@ else
     echo -e "\e[31m Failed \e[0m"
 fi
 
-echo -e -n "Extracting "$COMPONENT" :"
+echo -e -n "Extracting $COMPONENT :"
 unzip /tmp/frontend.zip         &>> /tmp/frontend.log
 if [ $? -eq 0 ]; then
     echo -e "\e[32m Success \e[0m"
@@ -44,7 +44,7 @@ else
     echo -e "\e[31m Failed \e[0m"
 fi
 
-echo -e -n "Configuring "$COMPONENT" :"
+echo -e -n "Configuring $COMPONENT :"
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
@@ -55,7 +55,7 @@ else
     echo -e "\e[31m Failed \e[0m"
 fi
 
-echo -e -n "Restarting "$COMPONENT" :"
+echo -e -n "Restarting $COMPONENT :"
 systemctl enable nginx      &>> /tmp/frontend.log
 systemctl daemon reload     &>> /tmp/frontend.log
 systemctl start nginx       &>> /tmp/frontend.log
