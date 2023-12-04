@@ -2,9 +2,9 @@
 
 echo -e "\n \e[33m Exploring Special variables in Shell Scripting \e[0m"
 
-echo -e "\nPrinting the Script Name : \e[34m $0 \e[0m"
-echo -e "\nPrinting the 1st line Argument : \e[34m $1 \e[0m"
-echo -e "\nPrinting the 2nd line Argument : \e[34m $2 \e[0m"
+echo -e "\n Printing the Script Name : \e[34m $0 \e[0m"
+echo -e "\n Printing the 1st line Argument : \e[34m $1 \e[0m"
+echo -e "\n Printing the 2nd line Argument : \e[34m $2 \e[0m"
 
 
 
