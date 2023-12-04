@@ -2,13 +2,13 @@
 USERID=$(id -u)
 COMPONENT=$1
 
-status(
+status(){
     if [ $? -eq 0 ]; then
         echo -e "\e[32m Success \e[0m"
     else    
         echo -e "\e[31m Failed \e[0m"
     fi
-)
+}
 
 if [ $UID -ne 0 ]; then
     echo -e "\n\e[31m \033[1m This script is expected to be executed with sudo or as a root user \033[0m \e[0m"
