@@ -3,26 +3,26 @@
 # Exploring Conditions in Shell
 
 echo -e "\n|--------------------------------------------------------------------|"
-echo -e "\n\t \e[35m \033[1m \033[3m Exploring Conditions in Shell Scripting \033[0m \033[0m \e[0m"
+echo -e "\n \e[35m \033[1m \033[3m \t Exploring Conditions in Shell Scripting \033[0m \033[0m \e[0m"
 
 ACTION=$1
 
 case $ACTION in
     start)
-        echo -e "\n\t \e[32m \033[1m \033[3m Starting Shipping Services\033[0m \033[0m \e[0m"
+        echo -e "\n \e[32m \033[1m \033[3m \t Starting Shipping Services\033[0m \033[0m \e[0m"
         echo -e "\n|--------------------------------------------------------------------|"
 
         exit 0
         ;;
 
     stop)
-        echo -e "\n\t \e[33m \033[1m \033[3m Stopping Shipping Services\033[0m \033[0m \e[0m"        
+        echo -e "\n \e[31m \033[1m \033[3m \t Stopping Shipping Services\033[0m \033[0m \e[0m"        
         echo -e "\n|--------------------------------------------------------------------|"
 
         exit 1
         ;;
     restart)
-        echo -e "\n\t \e[34m \033[1m \033[3m Restarting Shipping Services\033[0m \033[0m \e[0m"        
+        echo -e "\n \e[34m \033[1m \033[3m \t Restarting Shipping Services\033[0m \033[0m \e[0m"        
         echo -e "\n|--------------------------------------------------------------------|"
 
         exit 1
