@@ -1,5 +1,8 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
 echo -e "\n \e[33m "${bold}" Exploring Special variables in Shell Scripting \e[0m "${normal}""
 
 echo -e "\n" '$0' "Prints Script Name : \e[34m $0 \e[0m"
