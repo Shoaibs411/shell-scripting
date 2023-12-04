@@ -1,7 +1,7 @@
 #!/bin/bash
 USERID=$(id -u)
 COMPONENT=$1
-LOGFILE="/tmp/${COMPONENT}.log"
+LOGFILE="/tmp/${$COMPONENT}.log"
 
 status(){
     if [ $1 -eq 0 ]; then
@@ -17,7 +17,7 @@ if [ $UID -ne 0 ]; then
     exit 1
 fi
 echo -e "\n|--------------------------------------------------------------|"
-echo -e "\n\t ********** \e[35m \033[1m Configuring $COMPONENT \033[0m \e[0m **********"
+echo -e "\n\t ********** \e[35m \033[1m Configuring ${COMPONENT} \033[0m \e[0m **********"
 
 echo -e -n "\nInstalling nginx :"
 
@@ -25,26 +25,26 @@ yum install nginx -y    &>> $LOGFILE
 status $?
 
 echo -e -n "Downloading the $COMPONENT :"
-curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 status $?
 
-echo -e -n "Clean-up of $COMPONENT :"
+echo -e -n "Clean-up of ${COMPONENT} :"
 cd /usr/share/nginx/html
 rm -rf *                        &>> $LOGFILE
 status $?
 
-echo -e -n "Extracting $COMPONENT :"
-unzip -o /tmp/frontend.zip        &>> $LOGFILE
+echo -e -n "Extracting ${COMPONENT} :"
+unzip -o /tmp/{$COMPONENT}.zip        &>> $LOGFILE
 status $?
 
-echo -e -n "Configuring $COMPONENT :"
-mv frontend-main/* .
+echo -e -n "Configuring ${COMPONENT} :"
+mv {$COMPONENT}-main/* .
 mv static/* .
-rm -rf frontend-main README.md
+rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 status $?
 
-echo -e -n "Restarting $COMPONENT :"
+echo -e -n "Restarting ${COMPONENT} :"
 systemctl enable nginx     &>> $LOGFILE
 systemctl daemon reload    &>> $LOGFILE
 systemctl start nginx      &>> $LOGFILE
