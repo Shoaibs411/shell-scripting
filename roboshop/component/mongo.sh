@@ -28,5 +28,11 @@ echo -e -n "Installing the $COMPONENT :"
 um install -y mongodb-org    &>> ${LOGFILE}
 status $?
 
+
+
+
+
+
+
 # systemctl enable mongod
 # systemctl start mongod
