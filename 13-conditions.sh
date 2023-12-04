@@ -25,7 +25,7 @@ case $ACTION in
         echo -e "\n \e[34m \033[1m \033[3m \t Restarting Shipping Services\033[0m \033[0m \e[0m"        
         echo -e "\n|--------------------------------------------------------------------|"
 
-        exit 1
+        exit 2
         ;;
     *)
         echo -e "\n \e[31m \033[1m \033[3m \t Valid options are as follows :-\033[0m \033[0m \e[0m"        
@@ -34,7 +34,7 @@ case $ACTION in
 
         echo -e "\n|--------------------------------------------------------------------|"
 
-        exit 2
+        exit 3
         ;;
 
 
