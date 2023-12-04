@@ -27,7 +27,7 @@ for name in Jethalal Popatlal Sundarlal Manilal Mohanlal ; do
 echo -e "\n \e[33m \t Names from the loop are $name \e[0m"
 done
 
-<<coCOMMENT
+<<COMMENT
 
 echo -e "\n|--------------------------------------------------------------------|"
 
