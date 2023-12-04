@@ -7,11 +7,11 @@ if [ $UID -ne 0 ]; then
     exit 1
 fi
 echo -e "\n|--------------------------------------------------------------------|"
-echo -e "\n\t ********** \e[35m \033[1m Configuring $1 \033[0m \e[0m **********"
+echo -e "\n\t ********** \e[35m \033[1m Configuring frontend \033[0m \e[0m **********"
 
-echo -e "\n \e[32m \033[1m Installing nginx : \033[0m \e[0m "
+echo -e "\n\e[32m \033[1m Installing nginx : \033[0m \e[0m "
 
-yum install nginx -y    > /tmp/$1.log
+yum install nginx -y    > /tmp/frontend.log
 # systemctl enable nginx
 # systemctl start nginx
 
