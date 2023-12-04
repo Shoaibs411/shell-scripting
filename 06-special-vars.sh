@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "\n \e[33m ${bold} Exploring Special variables in Shell Scripting \e[0m ${normal}"
+echo -e "\n \e[33m "${bold}" Exploring Special variables in Shell Scripting \e[0m "${normal}""
 
 echo -e "\n" '$0' "Prints Script Name : \e[34m $0 \e[0m"
 echo -e "\n" '$#' "Prints the overall arguments used in the script : \e[34m $# \e[0m"
