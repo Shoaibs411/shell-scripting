@@ -94,7 +94,7 @@ NODEJS(){
     echo -e -n "Generating the ${COMPONENT} Artifacts :"
     cd $APPUSER_HOME
     npm install     &>> LOGFILE
-    Status $?
+    status $?
 
     START_SVC
 
