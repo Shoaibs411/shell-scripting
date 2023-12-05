@@ -44,11 +44,10 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 status $?
 
 echo -n "Updating Reverse-Proxy :"
-sed -i -e "/catalogue/s/localhost/catalogue.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
-sed -i -e "/user/s/localhost/user.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
-sed -i -e "/cart/s/localhost/cart.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
-status $?
-
+    for component in catalogue user cart; do 
+        sed -i -e "/${component}/s/localhost/${component}.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
+    done 
+stat $?
 echo -e -n "Restarting ${COMPONENT} :"
 systemctl enable nginx     &>> $LOGFILE
 systemctl daemon reload    &>> $LOGFILE
