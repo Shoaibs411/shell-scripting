@@ -46,6 +46,7 @@ status $?
 echo -n "Updating Reverse-Proxy :"
 sed -i -e "/catalogue/s/localhost/catalogue.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
 sed -i -e "/user/s/localhost/user.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
+sed -i -e "/cart/s/localhost/cart.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
 status $?
 
 echo -e -n "Restarting ${COMPONENT} :"
