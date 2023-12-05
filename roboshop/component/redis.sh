@@ -31,7 +31,7 @@ echo -n "Starting the ${COMPONENT} service :"
 systemctl daemon reload         &>> LOGFILE
 systemctl enable ${COMPONENT}   &>> LOGFILE
 systemctl start ${COMPONENT}   &>> LOGFILE
-statu $?
+status $?
 
 
 echo -e "\n     ********** \e[35m \033[1m ${COMPONENT} Configuration Completed \033[0m \e[0m **********"
