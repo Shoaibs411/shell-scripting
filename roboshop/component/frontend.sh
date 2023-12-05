@@ -50,10 +50,6 @@ systemctl daemon reload    &>> $LOGFILE
 systemctl start nginx      &>> $LOGFILE
 status $?
 
-echo -e -n "Updating Hostname for ${COMPONENT} :"
-sudo set-hostname ${COMPONENT}
-status $?
-
 echo -e "\n\t ********** \e[35m \033[1m Frontend Configured Successsfully \033[0m \e[0m **********"
 
 echo -e "\n|--------------------------------------------------------------|"
