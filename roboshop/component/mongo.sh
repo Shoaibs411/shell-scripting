@@ -49,11 +49,11 @@ status $?
 
 echo -e -n "Extracting the ${COMPONENT} :"
 cd /tmp/
-unzip -o mongodb.zip     &>> $LOGFILE
+unzip -o ${COMPONENT}.zip     &>> $LOGFILE
 status $?
 
 echo -e -n "Injecting ${COMPONENT} Schema :"
-cd /tmp/mongodb-main
+cd /tmp/${COMPONENT}-main
 mongo < catalogue.js     &>> $LOGFILE
 mongo < users.js         &>> $LOGFILE
 status $?
