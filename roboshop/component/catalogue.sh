@@ -47,7 +47,7 @@ curl -s -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
 status $?
 
 
-echo -e -n "Extracting ${COMPONENT}"
+echo -e -n "Extracting ${COMPONENT} :"
 cd /home/roboshop
 unzip -o /tmp/${COMPONENT}.zip      &>> LOGFILE
 status $?
