@@ -44,7 +44,7 @@ fi
 echo -e -n "\nDownloading the $COMPONENT :"
 
 curl -s -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
-
+status $?
 
 echo -e -n "\n\n    ********** \e[35m \033[1m ${COMPONENT} Configuration Completed \033[0m \e[0m **********"
 echo -e -n "\n|--------------------------------------------------------------|"
