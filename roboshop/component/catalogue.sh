@@ -41,7 +41,7 @@ else
     echo -e -n "\e[31m ${APP_USER} user already exist :\e[0m"
 fi
 
-echo -e -n "Downloading the $COMPONENT :"
+echo -e -n "\nDownloading the $COMPONENT :"
 
 curl -s -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
 
