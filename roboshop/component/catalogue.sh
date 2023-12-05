@@ -3,6 +3,7 @@ COMPONENT=catalogue
 USERID=$(id -u)
 LOGFILE="/tmp/${COMPONENT}.log"
 APP_USER="roboshop"
+COMPONENT_URL="https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 
 status(){
     if [ $1 -eq 0 ]; then
@@ -39,6 +40,11 @@ if [ $? -ne 0 ]; then
 else 
     echo -e -n "\e[31m ${APP_USER} user already exist :\e[0m"
 fi
+
+echo -e -n "Downloading the $COMPONENT :"
+
+curl -s -L -o /tmp/&{COMPONENT}.zip $COMPONENT_URL
+
 
 echo -e -n "\n\n    ********** \e[35m \033[1m ${COMPONENT} Configuration Completed \033[0m \e[0m **********"
 echo -e -n "\n|--------------------------------------------------------------|"
