@@ -44,8 +44,8 @@ rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 status $?
 
-echo -n "Updatin Reverse-Proxy :"
-sed -i -e "/${COMPONENT}/s/localhost/${COMPONENT}.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
+echo -n "Updating Reverse-Proxy :"
+sed -i -e "/catalogue/s/localhost/catalogue.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
 status $?
 
 echo -e -n "Restarting ${COMPONENT} :"
