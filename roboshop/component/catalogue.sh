@@ -37,7 +37,7 @@ if [ $? -ne 0 ]; then
     useradd $APP_USER
     status $?
 else 
-    echo -e -n "\e[31m ${APP_USER} user already exist \e[0m"
+    echo -e -n "\e[31m ${APP_USER} user already exist: "id $APP_USER" \e[0m"
 fi
 
 echo -e -n "\n\n    ********** \e[35m \033[1m Configuring ${COMPONENT} completed \033[0m \e[0m **********"
