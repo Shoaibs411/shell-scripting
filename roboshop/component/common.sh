@@ -19,3 +19,84 @@ status(){
         echo -e "\e[31m Failed \e[0m"
     fi
 }
+
+CREATE_USER(){
+
+    echo -e -n "Creating ${APPUSER} user :"
+    id $APPUSER                &>> LOGFILE
+    if [ $? -ne 0 ]; then
+        useradd $APPUSER
+        status $?
+    else 
+        echo -e -n "\e[35m ${APPUSER} user already exist \e[0m"
+    fi
+
+}
+
+DOWNLOAD_AND_EXTRACT(){
+
+    echo -e -n "\nDownloading the $COMPONENT :"
+    curl -s -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
+    status $?
+
+    echo -n "Performing Clean-up of ${COMPONENT} :"
+    rm -rf $APPUSER_HOME            &>> LOGFILE
+    status $?
+
+    echo -e -n "Extracting ${COMPONENT} :"
+    cd /home/roboshop
+    unzip -o /tmp/${COMPONENT}.zip  &>> LOGFILE
+    status $?
+
+}
+
+CONFIG_SVC(){
+
+    echo -e -n "Configuring the ${COMPONENT} permissions :"
+    mv ${APPUSER_HOME}-main $APPUSER_HOME      
+    chown -R $APPUSER:$APPUSER $APPUSER_HOME
+    hmod -R 770 $APPUSER_HOME
+    status $?
+
+    echo -n "Configuring the ${COMPONENT} systemd file :"
+    sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' ${APPUSER_HOME}/systemd.service
+    mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
+    status $?
+
+}
+
+START_SVC(){
+
+    echo -n "Starting the ${COMPONENT} service :"
+    systemctl daemon reload         &>> LOGFILE
+    systemctl enable ${COMPONENT}   &>> LOGFILE
+    systemctl start ${COMPONENT}   &>> LOGFILE
+    status $?
+
+}
+
+NODEJS(){
+
+    echo -e -n "\nConfiguring Nodejs repo :"
+    curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -    &>> $LOGFILE
+    yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y &>> $LOGFILE || true
+    status $?
+
+    echo -e -n "Installing Nodejs :"
+    yum install nodejs -y       &>> LOGFILE
+    status $? 
+    
+    CREATE_USER         #Calling user function, which creates user.
+    
+    DOWNLOAD_AND_EXTRACT
+
+    CONFIG_SVC
+
+    echo -e -n "Generating the ${COMPONENT} Artifacts :"
+    cd $APPUSER_HOME
+    npm install     &>> LOGFILE
+    Status $?
+
+    START_SVC
+
+}
