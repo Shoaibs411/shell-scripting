@@ -32,8 +32,13 @@ yum install nodejs -y       &>> LOGFILE
 status $?                   
 
 echo -e -n "Creating ${APP_USER} :"
-useradd $APP_USER
-status $?
+id $APP_USER                &>> LOGFILE
+if [ $id -eq 0 ]; then
+    useradd $APP_USER
+    status $?
+else 
+    echo -e -n "${APPUSER} already exist"
+fi
 
 echo -e "\n     ********** \e[35m \033[1m Configuring ${COMPONENT} completed \033[0m \e[0m **********"
 echo -e "\n|--------------------------------------------------------------|"
