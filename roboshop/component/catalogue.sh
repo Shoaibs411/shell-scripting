@@ -52,6 +52,11 @@ cd /home/roboshop
 unzip -o /tmp/${COMPONENT}.zip      &>> LOGFILE
 status $?
 
+echo -e -n "Configuring the ${COMPONENT} permissions :"
+mv /home/$APP_USER/${COMPONENT}-main /home/$APP_USER/${COMPONENT}
+chown -R $APP_USER:$APP_USER /home/$APP_USER/${COMPONENT}
+chmod -R 770 /home/$APP_USER/${COMPONENT}
+status $?
 
 
 echo -e -n "\n\n    ********** \e[35m \033[1m ${COMPONENT} Configuration Completed \033[0m \e[0m **********"
