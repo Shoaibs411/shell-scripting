@@ -43,7 +43,7 @@ fi
 
 echo -e -n "Downloading the $COMPONENT :"
 
-curl -s -L -o /tmp/&{COMPONENT}.zip $COMPONENT_URL
+curl -s -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
 
 
 echo -e -n "\n\n    ********** \e[35m \033[1m ${COMPONENT} Configuration Completed \033[0m \e[0m **********"
