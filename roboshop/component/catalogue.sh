@@ -2,8 +2,9 @@
 COMPONENT=catalogue
 USERID=$(id -u)
 LOGFILE="/tmp/${COMPONENT}.log"
-APP_USER="roboshop"
+APPUSER="roboshop"
 COMPONENT_URL="https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+APPUSER_HOME="/home/$APPUSER/${COMPONENT}"
 
 status(){
     if [ $1 -eq 0 ]; then
@@ -32,13 +33,13 @@ echo -e -n "Installing Nodejs :"
 yum install nodejs -y       &>> LOGFILE
 status $?                   
 
-echo -e -n "Creating ${APP_USER} user :"
-id $APP_USER                &>> LOGFILE
+echo -e -n "Creating ${APPUSER} user :"
+id $APPUSER                &>> LOGFILE
 if [ $? -ne 0 ]; then
-    useradd $APP_USER
+    useradd $APPUSER
     status $?
 else 
-    echo -e -n "\e[35m ${APP_USER} user already exist \e[0m"
+    echo -e -n "\e[35m ${APPUSER} user already exist \e[0m"
 fi
 
 echo -e -n "\nDownloading the $COMPONENT :"
@@ -53,9 +54,9 @@ unzip -o /tmp/${COMPONENT}.zip      &>> LOGFILE
 status $?
 
 echo -e -n "Configuring the ${COMPONENT} permissions :"
-mv /home/$APP_USER/${COMPONENT}-main /home/$APP_USER/${COMPONENT}
-chown -R $APP_USER:$APP_USER /home/$APP_USER/${COMPONENT}
-chmod -R 770 /home/$APP_USER/${COMPONENT}
+mv /home/$APPUSER/${COMPONENT}-main $APPUSER_HOME
+chown -R $APPUSER:$APPUSER $APPUSER_HOME
+chmod -R 770 $APPUSER_HOME
 status $?
 
 
