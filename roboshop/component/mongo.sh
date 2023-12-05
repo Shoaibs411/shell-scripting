@@ -2,7 +2,8 @@
 USERID=$(id -u)
 COMPONENT=mongo
 LOGFILE="/tmp/${COMPONENT}.log"
-MONGO_REPO=https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
+MONGO_REPO="https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
+SCHEMA_URL="https://github.com/stans-robot-project/mongodb/archive/main.zip"
 
 status(){
     if [ $1 -eq 0 ]; then
@@ -37,6 +38,23 @@ echo -e -n "Starting ${COMPONENT} :"
 systemctl enable mongod     &>> $LOGFILE
 systemctl daemon reload    &>> $LOGFILE
 systemctl start mongod      &>> $LOGFILE
+status $?
+
+
+echo -e -n "Downloading ${COMPONENT} Schema :"
+
+
+curl -s -L -o /tmp/mongodb.zip $SCHEMA_URL
+status $?
+
+echo -e -n "Extracting the ${COMPONENT} :"
+unzip -o /tmp/${$COMPONENT}.zip     &>> $LOGFILE
+status $?
+
+echo -e -n "Injecting ${COMPONENT} Schema :"
+cd /tmp/mongodb-main
+mongo < catalogue.js
+mongo < users.js
 status $?
 
 echo -e "\n|--------------------------------------------------------------|"
