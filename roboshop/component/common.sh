@@ -77,8 +77,7 @@ START_SVC(){
 
 NODEJS(){
 
-    echo -e -n "\nConfiguring Nodejs repo :"
-    curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -    &>> $LOGFILE
+    echo -e -n "\nConfiguring Latest Nodejs repo :"
     yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y &>> $LOGFILE || true
     status $?
 
