@@ -1,6 +1,8 @@
 #!/bin/bash
 COMPONENT=cart
 
+source component/common.sh
+
 echo -e "\n|--------------------------------------------------------------|"
 echo -e "\n\t   ********** \e[35m \033[1m Configuring ${COMPONENT} \033[0m \e[0m **********"
 
