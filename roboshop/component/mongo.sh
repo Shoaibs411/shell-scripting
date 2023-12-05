@@ -48,7 +48,7 @@ curl -s -L -o /tmp/mongodb.zip $SCHEMA_URL
 status $?
 
 echo -e -n "Extracting the ${COMPONENT} :"
-cd /tmp/
+cd /tmp/mongodb.zip
 unzip -o mongodb.zip     &>> $LOGFILE
 status $?
 
