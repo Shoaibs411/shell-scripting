@@ -19,8 +19,9 @@ fi
 echo -e "\n|--------------------------------------------------------------|"
 echo -e "\n\t ********** \e[35m \033[1m Configuring ${COMPONENT} \033[0m \e[0m **********"
 
-echo -e -n "Configuring ${COMPONENT} repo"
-yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y   &>> LOGFILE
+echo -e -n "Configuring Nodejs repo"
+curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
+yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y &>> $LOGFILE || true
 status $?
 
 echo -e -n "Installing Nodejs"
