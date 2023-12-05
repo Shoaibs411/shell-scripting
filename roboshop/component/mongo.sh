@@ -66,5 +66,4 @@ echo -e "\n|--------------------------------------------------------------|"
 
 
 
-# systemctl enable mongod
-# systemctl start mongod
+
