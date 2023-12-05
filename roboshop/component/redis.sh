@@ -27,7 +27,7 @@ echo -n "Installing ${COMPONENT} :"
 yum install redis-6.2.13 -y     &>> $LOGFILE
 status $?
 
-echo -n "Enabling &{COMPONENT} Visibility :"
+echo -n "Enabling ${COMPONENT} Visibility :"
 sed -i -e "s/127.0.0.1/0.0.0.0/" /etc/redis.conf
 sed -i -e "s/127.0.0.1/0.0.0.0/" /etc/redis/redis.conf
 status $?
