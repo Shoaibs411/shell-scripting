@@ -33,7 +33,7 @@ status $?
 
 echo -e -n "Creating ${APP_USER} user :"
 id $APP_USER                &>> LOGFILE
-if [ $id -ne 0 ]; then
+if [ $? -ne 0 ]; then
     useradd $APP_USER
     status $?
 else 
