@@ -54,7 +54,7 @@ unzip -o /tmp/${COMPONENT}.zip      &>> LOGFILE
 status $?
 
 echo -e -n "Configuring the ${COMPONENT} permissions :"
-mv ${APPUSER_HOME}-main $APPUSER_HOME
+mv ${APPUSER_HOME}-main $APPUSER_HOME       &>> LOGFILE
 chown -R $APPUSER:$APPUSER $APPUSER_HOME
 chmod -R 770 $APPUSER_HOME
 status $?
