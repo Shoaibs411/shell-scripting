@@ -54,8 +54,8 @@ status $?
 
 echo -e -n "Injecting ${COMPONENT} Schema :"
 cd /tmp/mongodb-main
-mongo < catalogue.js
-mongo < users.js
+mongo < catalogue.js     &>> $LOGFILE
+mongo < users.js         &>> $LOGFILE
 status $?
 
 echo -e "\n|--------------------------------------------------------------|"
