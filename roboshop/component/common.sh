@@ -55,7 +55,7 @@ CONFIG_SVC(){
     echo -e -n "Configuring the ${COMPONENT} permissions :"
     mv ${APPUSER_HOME}-main $APPUSER_HOME      
     chown -R $APPUSER:$APPUSER $APPUSER_HOME
-    hmod -R 770 $APPUSER_HOME
+    chmod -R 770 $APPUSER_HOME
     status $?
 
     echo -n "Configuring the ${COMPONENT} systemd file :"
