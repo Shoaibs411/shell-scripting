@@ -22,12 +22,12 @@ fi
 echo -e "\n|--------------------------------------------------------------|"
 echo -e "\n\t ********** \e[35m \033[1m Configuring ${COMPONENT} \033[0m \e[0m **********"
 
-<<comment
+
 echo -e -n "Configuring Nodejs repo :"
 curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -    &>> $LOGFILE
 yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y &>> $LOGFILE || true
 status $?
-comment
+
 
 echo -e -n "Installing Nodejs :"
 yum install nodejs -y       &>> LOGFILE
