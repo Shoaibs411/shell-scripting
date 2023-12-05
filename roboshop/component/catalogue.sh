@@ -35,5 +35,5 @@ echo -e -n "Creating ${APP_USER} :"
 useradd $APP_USER
 status $?
 
-echo -e "\n ********** \e[35m \033[1m Configuring ${COMPONENT} completed \033[0m \e[0m **********"
+echo -e "\n     ********** \e[35m \033[1m Configuring ${COMPONENT} completed \033[0m \e[0m **********"
 echo -e "\n|--------------------------------------------------------------|"
