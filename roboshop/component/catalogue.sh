@@ -31,9 +31,9 @@ echo -e -n "Installing Nodejs"
 yum install nodejs -y       &>> LOGFILE
 status $?                   
 
-echo -e -n "Creating ${APP_USER} :"
+echo -e -n "Creating ${APP_USER} user :"
 id $APP_USER                &>> LOGFILE
-if [ $id -eq 0 ]; then
+if [ $id -ne 0 ]; then
     useradd $APP_USER
     status $?
 else 
