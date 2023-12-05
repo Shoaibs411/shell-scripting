@@ -47,14 +47,13 @@ echo -e -n "\nDownloading the $COMPONENT :"
 curl -s -L -o /tmp/${COMPONENT}.zip $COMPONENT_URL
 status $?
 
+echo -n "Performing Clean-up of ${COMPONENT} :"
+rm -rf $APPUSER_HOME        &>> LOGFILE
+status $?
 
 echo -e -n "Extracting ${COMPONENT} :"
 cd /home/roboshop
 unzip -o /tmp/${COMPONENT}.zip      &>> LOGFILE
-status $?
-
-echo -n "Performing Clean-up of ${COMPONENT} :"
-rm -rf $APPUSER_HOME        &>> LOGFILE
 status $?
 
 echo -e -n "Configuring the ${COMPONENT} permissions :"
@@ -65,7 +64,7 @@ status $?
 
 echo -e -n "Generating the ${COMPONENT} Artifacts :"
 cd $APPUSER_HOME
-npm install            &>> LOGFILE
+npm install     &>> LOGFILE
 status $?
 
 echo -n "Configuring the ${COMPONENT} systemd file :"
