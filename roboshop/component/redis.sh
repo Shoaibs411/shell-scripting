@@ -17,9 +17,9 @@ if [ $UID -ne 0 ]; then
     exit 1
 fi
 echo -e "\n|--------------------------------------------------------------|"
-echo -e -n "\n\t  ********** \e[35m \033[1m Configuring ${COMPONENT} \033[0m \e[0m **********"
+echo -e "\n\t  ********** \e[35m \033[1m Configuring ${COMPONENT} \033[0m \e[0m **********"
 
-echo -n "Configuring Repositories :"
+echo -n "\nConfiguring Repositories :"
 curl -L https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/${COMPONENT}.repo -o /etc/yum.repos.d/${COMPONENT}.repo     &>> $LOGFILE  
 status $?
 
