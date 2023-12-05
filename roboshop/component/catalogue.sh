@@ -38,7 +38,7 @@ if [ $? -ne 0 ]; then
     useradd $APP_USER
     status $?
 else 
-    echo -e -n "\e[31m ${APP_USER} user already exist :\e[0m"
+    echo -e -n "\e[35m ${APP_USER} user already exist \e[0m"
 fi
 
 echo -e -n "\nDownloading the $COMPONENT :"
