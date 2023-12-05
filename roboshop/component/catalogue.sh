@@ -54,9 +54,14 @@ unzip -o /tmp/${COMPONENT}.zip      &>> LOGFILE
 status $?
 
 echo -e -n "Configuring the ${COMPONENT} permissions :"
-mv /home/$APPUSER/${COMPONENT}-main $APPUSER_HOME
+mv ${APPUSER_HOME}-main $APPUSER_HOME
 chown -R $APPUSER:$APPUSER $APPUSER_HOME
 chmod -R 770 $APPUSER_HOME
+status $?
+
+echo -e -n "Generating the ${COMPONENT} Artifacts :"
+cd $APPUSER_HOME
+npm install            &>> LOGFILE
 status $?
 
 
