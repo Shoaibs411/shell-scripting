@@ -28,6 +28,8 @@ echo -e -n "Installing the $COMPONENT :"
 yum install -y mongodb-org    &>> ${LOGFILE}
 status $?
 
+echo -e "\n|--------------------------------------------------------------|"
+
 
 
 
