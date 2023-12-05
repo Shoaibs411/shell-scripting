@@ -53,8 +53,12 @@ cd /home/roboshop
 unzip -o /tmp/${COMPONENT}.zip      &>> LOGFILE
 status $?
 
+echo -n "Performing Clean-up of ${COMPONENT} :"
+rm -rf $APPUSER_HOME        &>> LOGFILE
+status $?
+
 echo -e -n "Configuring the ${COMPONENT} permissions :"
-mv ${APPUSER_HOME}-main $APPUSER_HOME       &>> LOGFILE
+mv ${APPUSER_HOME}-main $APPUSER_HOME      
 chown -R $APPUSER:$APPUSER $APPUSER_HOME
 chmod -R 770 $APPUSER_HOME
 status $?
