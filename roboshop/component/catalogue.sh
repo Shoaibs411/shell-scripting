@@ -69,7 +69,7 @@ npm install            &>> LOGFILE
 status $?
 
 echo -n "Configuring the ${COMPONENT} systemd file :"
-sed -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' ${APPUSER_HOME}/systemd.service
+sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' ${APPUSER_HOME}/systemd.service
 mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
 status $?
 
