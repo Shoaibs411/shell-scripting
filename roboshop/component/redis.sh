@@ -20,7 +20,7 @@ echo -e "\n|--------------------------------------------------------------|"
 echo -e "\n\t ********** \e[35m \033[1m Configuring ${COMPONENT} \033[0m \e[0m **********"
 
 echo -n "Configuring Repositories :"
-curl -L https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/${COMPONENT}.repo -o /etc/yum.repos.d/${COMPONENT}.repo   
+curl -L https://raw.githubusercontent.com/stans-robot-project/${COMPONENT}/main/${COMPONENT}.repo -o /etc/yum.repos.d/${COMPONENT}.repo     &>> $LOGFILE  
 status $?
 
 echo -n "Installing ${COMPONENT} :"
