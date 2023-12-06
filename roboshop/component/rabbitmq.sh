@@ -7,7 +7,7 @@ echo -e "\n\t ********** \e[35m \033[1m Configuring ${COMPONENT} \033[0m \e[0m *
 
 source component/common.sh
     
-echo -e "\nConfiguring ${COMPONENT} repo :"
+echo -e -n "\nConfiguring ${COMPONENT} repo :"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash    &>> $LOGFILE
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash   &>> $LOGFILE
 status $?
