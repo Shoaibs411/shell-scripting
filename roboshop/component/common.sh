@@ -146,6 +146,7 @@ PYTHON(){
     GROUPID=$(id -g roboshop)
 
     echo "Updating the uid and gid of the ${COMPONENT}.ini file"
+    status $?
     sed -i -e "/^uid/ c uid=${USERID}" -e "/^gid/ c uid=${GROUPID}"  "${APPUSER_HOME}/${COMPONENT}.ini"
     
     START_SVC
