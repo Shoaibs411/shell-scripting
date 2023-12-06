@@ -66,6 +66,9 @@ CONFIG_SVC(){
     sed -i -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' ${APPUSER_HOME}/systemd.service
     sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' ${APPUSER_HOME}/systemd.service
     sed -i -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' ${APPUSER_HOME}/systemd.service
+    sed -i -e 's/CARTENDPOINT/cart.roboshop.internal/' ${APPUSER_HOME}/systemd.service
+    sed -i -e 's/DBHOST/mysql.roboshop.internal/' ${APPUSER_HOME}/systemd.service
+
 
     mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
     status $?
