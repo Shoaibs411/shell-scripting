@@ -6,7 +6,7 @@ source component/common.sh
 echo -e "\n|--------------------------------------------------------------|"
 echo -e "\n\t   ********** \e[35m \033[1m Configuring ${COMPONENT} \033[0m \e[0m **********"
 
-echo -n "Configuring ${COMPONENT} repo :"
+echo -n "\nConfiguring ${COMPONENT} repo :"
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/stans-robot-project/mysql/main/mysql.repo
 status $?
 
