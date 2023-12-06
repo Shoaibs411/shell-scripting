@@ -30,6 +30,12 @@ if [ $? -ne 0 ]; then
     status $?
 fi
 
+echo "show plugins;" |  mysql -uroot -pRoboShop@1 | grep validate_password &>> $LOGFILE
+if [ $? -eq 0 ]; then 
+    echo -n "Uninstalling password-validate-plugin :"
+    echo "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1 &>> $LOGFILE 
+    status $?
+fi
 
 echo -e -n "\n     ********** \e[35m \033[1m ${COMPONENT} Configuration Completed \033[0m \e[0m **********"
 echo -e -n "\n|--------------------------------------------------------------|\n"
