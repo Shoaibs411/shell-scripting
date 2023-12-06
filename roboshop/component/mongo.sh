@@ -58,8 +58,8 @@ mongo < catalogue.js     &>> $LOGFILE
 mongo < users.js         &>> $LOGFILE
 status $?
 
-echo -e "\n|--------------------------------------------------------------|"
 echo -e "\n   ********** \e[35m \033[1m ${COMPONENT} Configuration Completed \033[0m \e[0m **********"
+echo -e "\n|--------------------------------------------------------------|"
 
 
 
