@@ -37,6 +37,19 @@ if [ $? -eq 0 ]; then
     status $?
 fi
 
+echo -n "Downloading $COMPONENT Schema :"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+stat $?
+
+echo -n "Extracting Schema :"
+unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
+stat $? 
+
+echo -n "Injecting Schema :"
+cd ${COMPONENT}-main 
+mysql -u root -pRoboShop@1 <shipping.sql &>> $LOGFILE
+stat $? 
+
 echo -e -n "\n     ********** \e[35m \033[1m ${COMPONENT} Configuration Completed \033[0m \e[0m **********"
 echo -e -n "\n|--------------------------------------------------------------|\n"
 
