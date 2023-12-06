@@ -29,7 +29,7 @@ create_server() {
 
     aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/dns.json\
 
-    echo -e "******* \e[32m $COMPONENT-$ENV \e[0m DNS Record Creation Is Complted ******* !!!!!! \n\n"
+    echo -e "******* \e[32m $COMPONENT-$ENV \e[0m DNS Record Creation Is Completed ******* !!!!!! \n\n"
 }
 
 # If the user supplies all as the first argument, then all these servers will be created.
