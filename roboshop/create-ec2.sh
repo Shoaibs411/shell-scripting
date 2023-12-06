@@ -8,8 +8,8 @@ SGID=$(aws ec2 describe-security-groups --filters "Name=group-name,Values=b56-al
 INSTANCE_TYPE="t2.micro"
 
 if [ -z $1 ] || [ -z $2 ] ; then 
-    echo -e "\e[31m ****** COMPONENT NAME & ENV ARE NEEDED ****** \e[0m \n\t\t"
-    echo -e "\e[36m \t\t Example Usage : \e[0m  bash create-ec2 ratings dev"
+    echo -e "\e[31m ****** COMPONENT NAME IS NEEDED ****** \e[0m \n\t\t"
+    echo -e "\e[36m \t\t Example Usage : \e[0m  bash create-ec2 ratings"
     exit 1 
 fi
     
@@ -31,6 +31,7 @@ create_server(){
 }
 
 # If the user supplies all as the first argument, then all these servers will be created.
+
 if [ "$1" == "all" ]; then 
 
     for component in mongodb catalogue cart user shipping frontend payment mysql redis rabbitmq; do 
