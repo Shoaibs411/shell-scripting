@@ -7,7 +7,7 @@ AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=DevOps-LabImage-Cen
 SGID=$(aws ec2 describe-security-groups --filters "Name=group-name,Values=b56-allow-all" | jq ".SecurityGroups[].GroupId" | sed -e 's/"//g')
 INSTANCE_TYPE="t2.micro"
 
-if [ -z $1 ] || [ -z $2 ] ; then 
+if [ -z $1 ] ; then 
     echo -e "\e[31m ****** COMPONENT NAME IS NEEDED ****** \e[0m \n\t\t"
     echo -e "\e[36m \t\t Example Usage : \e[0m  bash create-ec2 ratings"
     exit 1 
