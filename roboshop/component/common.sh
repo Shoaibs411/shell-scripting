@@ -109,7 +109,7 @@ NODEJS(){
 
 MAVEN(){
 
-echo -e -n "Installing Maven :"
+echo -e -n "\nInstalling Maven :"
     yum install maven -y  &>> $LOGFILE
     status $? 
 
