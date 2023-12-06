@@ -17,3 +17,5 @@ echo -e "\n\t ********** \e[35m \033[1m ${COMPONENT} DNS Record Creation in prog
 sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${PRIVATE_IP}/" route53.json > /tmp/dns.json
 
 $ aws route53 change-resource-record-sets --hosted-zone-id ${HOSTEDZONEID} --change-batch file:///tmp/dns.json
+
+# adding comment
