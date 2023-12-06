@@ -54,7 +54,7 @@ DOWNLOAD_AND_EXTRACT(){
 CONFIG_SVC(){
 
     echo -e -n "Configuring the ${COMPONENT} permissions :"
-    mv ${APPUSER_HOME}-main $APPUSER_HOME      
+    # ${APPUSER_HOME}-main $APPUSER_HOME      
     chown -R $APPUSER:$APPUSER $APPUSER_HOME
     chmod -R 770 $APPUSER_HOME
     status $?
