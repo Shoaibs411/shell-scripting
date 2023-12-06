@@ -9,7 +9,7 @@ INSTANCE_TYPE="t2.micro"
 
 if [ -z $1 ] || [ -z $2 ] ; then 
     echo -e "\e[31m ****** COMPONENT NAME is NEEDED ****** \e[0m \n\t\t"
-    echo -e "\e[36m \t\t Example Usage : \e[0m  bash create-ec2 ratings "
+    echo -e "\e[36m \t Example Usage : \e[0m  bash create-ec2 ratings "
     exit 1 
 fi
     
