@@ -13,13 +13,6 @@ if [ -z $1 ] || [ -z $2 ] ; then
     exit 1 
 fi 
 
-COMPONENT=$1
-ENV=$2
-HOSTEDZONEID="Z031297333JO38PNHPROR"
-AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=DevOps-LabImage-CentOS7" | jq ".Images[].ImageId" | sed -e 's/"//g')
-SGID=$(aws ec2 describe-security-groups --filters "Name=group-name,Values=b56-allow-all" | jq ".SecurityGroups[].GroupId" | sed -e 's/"//g')
-INSTANCE_TYPE="t3.micro"
-
 create_server() {
     echo -e "******* \e[32m $COMPONENT-$ENV \e[0m Server Creation In Progress ******* !!!!!!"
 
@@ -31,7 +24,7 @@ create_server() {
 
     aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/dns.json\
 
-    echo -e "******* \e[32m $COMPONENT-$ENV \e[0m DNS Record Creation Is Complted ******* !!!!!! \n\n"
+    echo -e "******* \e[32m $COMPONENT-$ENV \e[0m DNS Record Creation Is Completed ******* !!!!!! \n\n"
 }
 
 # If the user supplies all as the first argument, then all these servers will be created.
