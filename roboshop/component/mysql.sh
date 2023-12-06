@@ -39,7 +39,7 @@ fi
 
 echo -n "Downloading $COMPONENT Schema :"
 curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
-stat $?
+status $?
 
 echo -n "Extracting Schema :"
 unzip -o /tmp/${COMPONENT}.zip  &>> $LOGFILE
