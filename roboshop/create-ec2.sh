@@ -2,9 +2,6 @@
 
 # This script is going to create EC2 Servers
 
-# AMI_ID="ami-0f75a13ad2e340a58" # Hardcoding is a bad-choice particularly with AMI_ID as it's going be changed when you register a new AMI.
-# SGID="sg-052fd946b7e11841a"
-
 if [ -z $1 ] || [ -z $2 ] ; then 
     echo -e "\e[31m ****** COMPONENT NAME & ENV ARE NEEDED ****** \e[0m \n\t\t"
     echo -e "\e[36m \t\t Example Usage : \e[0m  bash create-ec2 ratings dev"
@@ -13,7 +10,7 @@ fi
 
 COMPONENT=$1
 ENV=$2
-#HOSTEDZONEID="Z08445993T3OQ7PISU2JV"  hardcoding is not good for the script
+#HOSTEDZONEID="Z08445993T3OQ7PISU2JV"  hardcoding is not good if hosted zone id got updated.
 HOSTEDZONEID=$(aws route53 list-hosted-zones | jq '.HostedZones[] | select(.Name == "roboshop.internal.") | .Id' | sed -e 's/hostedzone//g' -e 's|/||g' -e 's|"||g')
 AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=DevOps-LabImage-CentOS7" | jq ".Images[].ImageId" | sed -e 's/"//g')
 SGID=$(aws ec2 describe-security-groups --filters "Name=group-name,Values=b56-allow-all" | jq ".SecurityGroups[].GroupId" | sed -e 's/"//g')
