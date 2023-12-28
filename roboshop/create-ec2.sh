@@ -20,7 +20,7 @@ create_server() {
     echo -e "******* \e[32m $COMPONENT-$ENV \e[0m Server Creation In Progress ******* !!!!!!"
 
     PRIVATE_IP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids ${SGID} --tag-specifications "ResourceType=instance, Tags=[{Key=Name,Value=${COMPONENT}-${ENV}}]" | jq ".Instances[].PrivateIpAddress" | sed -e 's/"//g')
-    echo -e "******* \e[32m $COMPONENT-$ENV \e[0m Server Creation Is Complted ******* !!!!!! \n\n"
+    echo -e "******* \e[32m $COMPONENT-$ENV \e[0m Server Creation Is Completed ******* !!!!!! \n\n"
 
     echo -e "******* \e[32m $COMPONENT-$ENV \e[0m DNS Record Creation In Progress ******* !!!!!!"
     sed -e "s/COMPONENT/${COMPONENT}-${ENV}/" -e "s/IPADDRESS/${PRIVATE_IP}/" route53.json > /tmp/dns.json
